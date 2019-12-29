@@ -1,5 +1,5 @@
 import random
-from main import helpers, model, preprocess
+from src import helpers, model, preprocess
 from tests import unit_tests
 
 # Image data directories

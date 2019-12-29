@@ -1,5 +1,5 @@
 import numpy as np
-from main import features
+from src import features
 
 
 def estimate_label(image):
