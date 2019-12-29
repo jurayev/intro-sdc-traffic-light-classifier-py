@@ -18,6 +18,9 @@ def get_sorted_images_by_class(images):
 
 
 def show_images(image_one, image_two, image_three):
+    """
+    Plots three images with label and shape attributes
+    """
     f, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(20,10))
     ax1.set_title("%s with shape %s" % (image_one[1], image_one[0].shape))
     ax1.imshow(image_one[0])
