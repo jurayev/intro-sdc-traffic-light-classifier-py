@@ -2,11 +2,12 @@ import unittest
 
 
 def print_fail():
-    print('TEST FAILED')
+    print("TEST FAILED")
 
 
-def print_pass():
-    print('TEST PASSED')
+def print_pass(message):
+    print("TEST PASSED")
+    print(message)
 
 
 # A class holding all tests
@@ -33,7 +34,7 @@ class Tests(unittest.TestCase):
             return
 
         # Print out a "tests passed" message
-        print_pass()
+        print_pass("The `one_hot_encode` function works as expected!")
 
 
     def test_red_as_green(self, misclassified_images):
@@ -57,4 +58,4 @@ class Tests(unittest.TestCase):
                     return
 
         # No red lights are classified as green; tests passed
-        print_pass()
+        print_pass("No misclassified Red images are classified as Green!")
