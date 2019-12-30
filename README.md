@@ -16,11 +16,11 @@ Udacity Intro to Self-Driving-Car Nanodegree
 In this project I builded a classification pipeline that takes in an image of a traffic light, analysis it using computer vision and outputs a label that classifies the image as a: Red, Yellow, or Green illuminated traffic light.
 
 Classification Pipeline includes:
-1. [Loading and visualizing the data.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#loading-and-visualizing-the-traffic-light-dataset)
-2. [Pre-processing and standardazing the input images.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#pre-process-the-data)
-3. [Feature extraction.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#feature-extraction)
-4. [Classification of a model.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#classification-of-a-model)
-5. [Evaluation of the model.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#evaluation-of-the-model)
+1. [Loading and visualizing the data.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#1-loading-and-visualizing-the-traffic-light-dataset)
+2. [Pre-processing and standardazing the input images.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#2-pre-process-the-data)
+3. [Feature extraction.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#3-feature-extraction)
+4. [Classification of a model.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#4-classification-of-a-model)
+5. [Evaluation of the model.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#5-evaluation-of-the-model)
 
 ## Dependencies
 * Python 3.5 or higher.
