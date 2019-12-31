@@ -78,7 +78,7 @@ Here we visualize and explore the image data. For that I created two functions:
 ### 2. Pre-process the Data
 After loading in each image, we have to standardize the input and output!
 
-#### Standardize the input images¶
+#### Standardize the input images
 I created function `standardize_input(image)` that takes in an RGB image and return a new, standardized version:
 * Resized image with desired dimension of 32x32px.
 * Cropped resized version that would help us to extract features and evaluate image more precisely, also cropping significantly increases preformance of processing image arrays that is ***crucial when working with self-driving cars***.
@@ -94,7 +94,7 @@ I am using the knowledge about color spaces, shape analysis, and feature constru
 
 Here is a basic pipeline I am using in my classification model:
 
-<img src="images/feature_ext_steps.png" width="70%" height="70%">
+<img src="images/feature_ext_steps.png" width="75%" height="75%">
 
 1. A masking feature.
    - Mask filter feature `create_mask_filter(image)` helps to get rid of bright, blurred, dark colors leaving only Red, Yellow, Green respectively.
@@ -104,7 +104,7 @@ Here is a basic pipeline I am using in my classification model:
    - Brightness feature helps to extract a feature vector with brightness values for each of three traffic light classes. The highest value, the most probably the color is on.
 Here is a visualization of HSV colorspace for red light image:
 
-<img src="images/hsv_image.png" width="70%" height="70%">   
+<img src="images/hsv_image.png" width="75%" height="75%">   
 
 Based on this visualization I assume that S channel and V channel are most suitable to extract the brightness feature, however based on experimental visualization and training of many images it is clear that Saturation doesn't work well for most of the images and I should proceed with Value channel.
 
