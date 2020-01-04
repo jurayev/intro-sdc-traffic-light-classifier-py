@@ -135,10 +135,11 @@ Once I evaluated the results, also it must be true that:
 
 Unit tests results are:
 ```
-$ TEST PASSED
-The `one_hot_encode` function works as expected!
-$ TEST PASSED
-No misclassified Red images are classified as Green!
+--------------------------RUNNING UNIT TESTS--------------------------------
+TEST PASSED: one_hot_encode() works as expected for RED images!
+TEST PASSED: one_hot_encode() works as expected for YELLOW images!
+TEST PASSED: one_hot_encode() works as expected for GREEN images!
+TEST PASSED: test_red_as_green() - No misclassified Red images are classified as Green!
 ```
 
 ## License
