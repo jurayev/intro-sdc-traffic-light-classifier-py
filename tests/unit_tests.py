@@ -3,11 +3,20 @@ from src import preprocess
 
 
 def print_fail():
-    print("TEST FAILED")
+    print("TEST FAILED: see details below.")
 
 
 def print_pass(message):
     print("TEST PASSED: %s" % message)
+
+
+def run_unittest(misclassified_images):
+    print("--------------------------RUNNING UNIT TESTS--------------------------------")
+    tests = Tests()
+    tests.test_one_hot_encode_red()
+    tests.test_one_hot_encode_yellow()
+    tests.test_one_hot_encode_green()
+    tests.test_red_as_green(misclassified_images)
 
 
 # A class holding all tests

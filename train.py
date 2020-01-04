@@ -23,9 +23,7 @@ def main():
     model.calculate_accuracy(STANDARDIZED_TEST_LIST, MISCLASSIFIED)
 
     # TESTS
-    tests = unit_tests.Tests()
-    tests.test_one_hot(preprocess.one_hot_encode)
-    tests.test_red_as_green(MISCLASSIFIED)
+    unit_tests.run_unittest(MISCLASSIFIED)
 
 
 if __name__ == '__main__':
