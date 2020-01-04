@@ -59,6 +59,7 @@ def calculate_accuracy(initial_images, misclassified_images):
     misclassified = len(misclassified_images)
     num_correct = total - misclassified
     accuracy = num_correct / total
-
-    print('Accuracy: %s' % accuracy)
-    print("Number of misclassified images = %s out of %s" % (misclassified, total))
+    print('\n' + '--------------------Begin A Model Classification----------------------------' + '\n')
+    print('Accuracy: %s.' % accuracy)
+    print("Number of misclassified images = %s out of %s." % (misclassified, total))
+    print('\n' + '-----------The model is trained and evaluated successfully!-----------------' + '\n')
