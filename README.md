@@ -13,11 +13,11 @@ Udacity Intro to Self-Driving-Car Nanodegree
 
 ## Project Summary
 
-In this project I builded a classification pipeline that takes in an image of a traffic light, analysis it using computer vision and outputs a label that classifies the image as a: Red, Yellow, or Green illuminated traffic light.
+In this project, I built a classification pipeline that takes in an image of a traffic light, analysis it using computer vision and outputs a label that classifies the image as a: Red, Yellow, or Green illuminated traffic light.
 
 Classification Pipeline includes:
 1. [Loading and visualizing the data.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#1-loading-and-visualizing-the-traffic-light-dataset)
-2. [Pre-processing and standardazing the input images.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#2-pre-process-the-data)
+2. [Pre-processing and standardizing the input images.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#2-pre-process-the-data)
 3. [Feature extraction.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#3-feature-extraction)
 4. [Classification of a model.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#4-classification-of-a-model)
 5. [Evaluation of the model.](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#5-evaluation-of-the-model)
@@ -63,7 +63,7 @@ All 1484 of the traffic light images are separated into training and testing dat
 * All images are pictures of 3-light traffic lights with one light illuminated.
 
 ## Pipeline
-This section explains every pipeline step in details.
+This section explains every pipeline step in detail.
 
 ### 1. Loading and Visualizing the Traffic Light Dataset
 Here we visualize and explore the image data. For that I created two functions:
@@ -79,9 +79,9 @@ Here we visualize and explore the image data. For that I created two functions:
 After loading in each image, we have to standardize the input and output!
 
 #### Standardize the input images
-I created function `standardize_input(image)` that takes in an RGB image and return a new, standardized version:
-* Resized image with desired dimension of 32x32px.
-* Cropped resized version that would help us to extract features and evaluate image more precisely, also cropping significantly increases preformance of processing image arrays that is ***crucial when working with self-driving cars***.
+I created the function `standardize_input(image)` that takes in an RGB image and return a new, standardized version:
+* Resized image with the desired dimension of 32x32px.
+* Cropped resized version that would help us to extract features and evaluate image more precisely, also cropping significantly increases the performance of processing image arrays that is ***crucial when working with self-driving cars***.
 
 Another pre-processing helper function is `one_hot_encode(label)` that label each image with ***one-hot encoding*** feature as binary vector, for example for yellow label value it would be `[0, 1, 0]`.
 
@@ -90,7 +90,7 @@ Output for standardized image list looks like:
 
 ### 3. Feature Extraction
 
-I am using the knowledge about color spaces, shape analysis, and feature construction to create features that helps distinguish and classify the three types of traffic light images.
+I am using the knowledge about color spaces, shape analysis, and feature construction to create features that help distinguish and classify the three types of traffic light images.
 
 Here is a basic pipeline I am using in my classification model:
 
@@ -100,33 +100,33 @@ Here is a basic pipeline I am using in my classification model:
    - Mask filter feature `create_mask_filter(image)` helps to get rid of bright, blurred, dark colors leaving only Red, Yellow, Green respectively.
    
 2. A brightness feature.
-   - Using HSV color space, I created a feature `create_brightness_feature(image)` that helps identify the 3 different classes of traffic light.
-   - Brightness feature helps to extract a feature vector with brightness values for each of three traffic light classes. The highest value, the most probably the color is on.
+   - Using HSV color space, I created a feature `create_brightness_feature(image)` that helps identify the 3 different classes of the traffic light.
+   - The brightness feature helps to extract a feature vector with brightness values for each of the three traffic light classes. The highest value, the most probably the color is on.
 Here is a visualization of HSV colorspace for red light image:
 
 <img src="images/hsv_image.png" width="75%" height="75%">   
 
-Based on this visualization I assume that S channel and V channel are most suitable to extract the brightness feature, however based on experimental visualization and training of many images it is clear that Saturation doesn't work well for most of the images and I should proceed with Value channel.
+Based on this visualization I assume that S channel and V channel are most suitable to extract the brightness feature, however, based on experimental visualization and training of many images it is clear that Saturation doesn't work well for most of the images and I should proceed with Value channel.
 
 These features will be combined to form a complete classification algorithm that outputs 100% accuracy in a combination only.
 
 ### 4. Classification of a model
 
-Using all of my features, I wrote a function that takes in an RGB image and, using the extracted features, outputs whether a light is red, green or yellow as a one-hot encoded label. This classification function is be able to classify any image of a traffic light!
+Using all of my features, I wrote a function that takes in an RGB image and, using the extracted features, outputs whether a light is red, green or yellow as a one-hot encoded label. This classification function is able to classify an image of a traffic light!
 
-`estimate_label(image)` - takes in RGB image input. Analyzes the image using feature extraction code and output a one-hot encoded label.
+`estimate_label(image)` - takes in RGB image input. Analyze the image using a feature extraction code and output a one-hot encoded label.
 
 ### 5. Evaluation of the model.
-Determining the Accuracy is the main part of classification model. Compare the output of a classification algorithm with the true labels and determine the accuracy. 
+Determining Accuracy is the main part of the classification model. Compare the output of a classification algorithm with the true labels and determine the accuracy. 
 `get_misclassified_images(test_images)` - this code stores all the misclassified images, their predicted labels, and their true labels, in a list.
 
-The results of classification of test images dataset are below:
+The results of the classification of test images dataset are below:
 ```
 $ Accuracy: 1.0
 $ Number of misclassified images = 0 out of 297
 ```
 
-The 100% accuracy is achieved by properly standardizing images, masking them and exatracting the brightness feature. Sometimes input images are fully black out with masking filter due to low-quality of the input image and predictions made are wrong. To avoid that I programmed my algorith to check that and use non-masked image copy for evaluation.
+The 100% accuracy is achieved by properly standardizing images, masking them and extracting the brightness feature. Sometimes input images are fully blackout with masking filter due to low-quality of the input image and predictions made are wrong. To avoid that I programmed my algorithm to check that and use non-masked image copy for evaluation.
 
 ## Tests
 Once I evaluated the results, also it must be true that:
