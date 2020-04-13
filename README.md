@@ -37,7 +37,13 @@ $ git clone https://github.com/jurayev/intro-sdc-traffic-light-classifier-py
 ```
 $ cd intro-sdc-traffic-light-classifier-py
 ```
-3. Run Classifier
+3. Install dependencies
+```
+$ pip3 install opencv-python
+$ pip3 install image
+$ pip3 install matplotlib
+```
+4. Run Classifier
 ```
 $ python3 run.py
 ```
@@ -133,7 +139,7 @@ Once I evaluated the results, also it must be true that:
 1. One hot encode function works properly.
 2. Never classify a red light as a green light.
 
-Unit tests results are:
+The code is covered with unit tests by `unittest` framework and the results are:
 ```
 --------------------------RUNNING UNIT TESTS--------------------------------
 TEST PASSED: one_hot_encode() works as expected for RED images!
