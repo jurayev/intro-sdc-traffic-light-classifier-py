@@ -25,7 +25,7 @@ class Tests(unittest.TestCase):
     def test_one_hot_encode_red(self):
         expected_label = [1, 0, 0]
         encoded_label = preprocess.one_hot_encode('red')
-        self.assertListEqual(encoded_label, expected_label,
+        self.assertListEqual(expected_label, encoded_label,
                              "one_hot_encode() works incorrectly. Expected %s. Actual: %s" % (
                                  expected_label, encoded_label))
         print_pass("one_hot_encode() works as expected for RED images!")
@@ -33,7 +33,7 @@ class Tests(unittest.TestCase):
     def test_one_hot_encode_yellow(self):
         expected_label = [0, 1, 0]
         encoded_label = preprocess.one_hot_encode('yellow')
-        self.assertListEqual(encoded_label, expected_label,
+        self.assertListEqual(expected_label, encoded_label,
                              "one_hot_encode() works incorrectly. Expected %s. Actual: %s" % (
                                  expected_label, encoded_label))
         print_pass("one_hot_encode() works as expected for YELLOW images!")
@@ -41,7 +41,7 @@ class Tests(unittest.TestCase):
     def test_one_hot_encode_green(self):
         expected_label = [0, 0, 1]
         encoded_label = preprocess.one_hot_encode('green')
-        self.assertListEqual(encoded_label, expected_label,
+        self.assertListEqual(expected_label, encoded_label,
                              "one_hot_encode() works incorrectly. Expected %s. Actual: %s" % (
                                  expected_label, encoded_label))
         print_pass("one_hot_encode() works as expected for GREEN images!")
@@ -57,7 +57,7 @@ class Tests(unittest.TestCase):
             if true_label == [1, 0, 0]:
                 try:
                     # Check that it is NOT labeled as a green light
-                    self.assertNotEqual(predicted_label, [0, 0, 1])
+                    self.assertNotEqual([0, 0, 1], predicted_label)
                 except self.failureException as e:
                     print_fail()
                     print("Warning: A red light is classified as green.")
