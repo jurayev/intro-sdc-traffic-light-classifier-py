@@ -1,6 +1,6 @@
 # Traffic Light Classifier
 
-Udacity Intro to Self-Driving-Car Nanodegree
+Classification model for illuminated traffic light detection
 
 ## Table of Contents
 * [Project Summary](https://github.com/jurayev/intro-sdc-traffic-light-classifier-py#project-summary)
